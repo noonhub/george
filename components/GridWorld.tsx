@@ -179,6 +179,52 @@ const GridWorld: React.FC<GridWorldProps> = ({
         </div>
       )}
 
+      <div className="bg-[#0f1013] border border-white/5 rounded-2xl p-4 space-y-3">
+        <div className="flex items-center justify-between gap-3 flex-wrap">
+          <h4 className="text-sm font-semibold text-[#42dca3] uppercase tracking-wide">Fun stop types</h4>
+          <p className="text-xs text-gray-400">
+            Each distraction trades points for time and energy differently. George learns which ones help him finish.
+          </p>
+        </div>
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+          {Object.entries(distractionTypes).map(([key, config]) => (
+            <div key={key} className="bg-white/5 border border-white/10 rounded-xl p-3 space-y-2">
+              <div className="flex items-center justify-between gap-2">
+                <div className="flex items-center gap-2">
+                  <span className="text-xl" role="img" aria-label={`${config.label} icon`}>
+                    {DISTRACTION_EMOJIS[key as DistractionKey]}
+                  </span>
+                  <div>
+                    <p className="text-sm font-semibold text-gray-100">{config.label}</p>
+                    <p className="text-[11px] text-gray-400">{key === defaultDistractionType ? 'Default fun stop' : 'Placed fun stop'}</p>
+                  </div>
+                </div>
+                <span className="text-[11px] px-2 py-1 rounded-full bg-black/40 border border-white/10 text-gray-200">
+                  {key}
+                </span>
+              </div>
+              <div className="grid grid-cols-3 gap-2 text-center text-[11px] text-gray-300">
+                <div className="bg-black/30 rounded-lg p-2 border border-white/10">
+                  <p className="text-[10px] uppercase text-gray-500">Fun</p>
+                  <p className="font-semibold text-emerald-300">{config.funReward}</p>
+                </div>
+                <div className="bg-black/30 rounded-lg p-2 border border-white/10">
+                  <p className="text-[10px] uppercase text-gray-500">Time cost</p>
+                  <p className="font-semibold text-amber-300">-{config.timePenalty}</p>
+                </div>
+                <div className="bg-black/30 rounded-lg p-2 border border-white/10">
+                  <p className="text-[10px] uppercase text-gray-500">Energy</p>
+                  <p className="font-semibold text-sky-300">+{config.energyBoost}</p>
+                </div>
+              </div>
+              <p className="text-[11px] text-gray-400">
+                Feels like +{config.funReward} points of fun, but costs {config.timePenalty} time and restores {config.energyBoost} energy when George visits for the first time.
+              </p>
+            </div>
+          ))}
+        </div>
+      </div>
+
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
         <div className="flex items-center gap-2">
           <span className="text-sm text-gray-300">Footprints show George’s latest path.</span>
@@ -285,53 +331,6 @@ const GridWorld: React.FC<GridWorldProps> = ({
           })
         )}
       </div>
-
-      <div className="bg-[#0f1013] border border-white/5 rounded-2xl p-4 space-y-3">
-        <div className="flex items-center justify-between gap-3 flex-wrap">
-          <h4 className="text-sm font-semibold text-[#42dca3] uppercase tracking-wide">Fun stop types</h4>
-          <p className="text-xs text-gray-400">
-            Each distraction trades points for time and energy differently. George learns which ones help him finish.
-          </p>
-        </div>
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-          {Object.entries(distractionTypes).map(([key, config]) => (
-            <div key={key} className="bg-white/5 border border-white/10 rounded-xl p-3 space-y-2">
-              <div className="flex items-center justify-between gap-2">
-                <div className="flex items-center gap-2">
-                  <span className="text-xl" role="img" aria-label={`${config.label} icon`}>
-                    {DISTRACTION_EMOJIS[key as DistractionKey]}
-                  </span>
-                  <div>
-                    <p className="text-sm font-semibold text-gray-100">{config.label}</p>
-                    <p className="text-[11px] text-gray-400">{key === defaultDistractionType ? 'Default fun stop' : 'Placed fun stop'}</p>
-                  </div>
-                </div>
-                <span className="text-[11px] px-2 py-1 rounded-full bg-black/40 border border-white/10 text-gray-200">
-                  {key}
-                </span>
-              </div>
-              <div className="grid grid-cols-3 gap-2 text-center text-[11px] text-gray-300">
-                <div className="bg-black/30 rounded-lg p-2 border border-white/10">
-                  <p className="text-[10px] uppercase text-gray-500">Fun</p>
-                  <p className="font-semibold text-emerald-300">{config.funReward}</p>
-                </div>
-                <div className="bg-black/30 rounded-lg p-2 border border-white/10">
-                  <p className="text-[10px] uppercase text-gray-500">Time cost</p>
-                  <p className="font-semibold text-amber-300">-{config.timePenalty}</p>
-                </div>
-                <div className="bg-black/30 rounded-lg p-2 border border-white/10">
-                  <p className="text-[10px] uppercase text-gray-500">Energy</p>
-                  <p className="font-semibold text-sky-300">+{config.energyBoost}</p>
-                </div>
-              </div>
-              <p className="text-[11px] text-gray-400">
-                Feels like +{config.funReward} points of fun, but costs {config.timePenalty} time and restores {config.energyBoost} energy when George visits for the first time.
-              </p>
-            </div>
-          ))}
-        </div>
-      </div>
-
     </div>
   );
 };

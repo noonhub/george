@@ -48,9 +48,6 @@ const App: React.FC = () => {
           </div>
         </section>
       </main>
-      <footer className="text-center py-6 mt-6 text-gray-500 text-sm border-t border-white/5">
-        <p>Built with React, TypeScript, and Tailwind CSS.</p>
-      </footer>
     </div>
   );
 };
