@@ -11,8 +11,8 @@ const App: React.FC = () => {
   return (
     <div className="min-h-screen bg-[#0b0c0f] text-gray-100 font-sans">
       <Header />
-      <main className="container mx-auto p-6 lg:p-10 space-y-8">
-        <section className="relative rounded-3xl bg-[#131417] border border-white/5 p-6 shadow-2xl shadow-black/40 overflow-hidden">
+      <main className="container mx-auto px-4 py-6 sm:px-6 lg:p-10 space-y-8">
+        <section className="relative rounded-3xl bg-[#131417] border border-white/5 p-4 sm:p-6 shadow-2xl shadow-black/40 overflow-hidden">
           <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(66,220,163,0.18),transparent_60%)] opacity-70 rounded-3xl" />
           <div className="relative">
             <GridWorld 

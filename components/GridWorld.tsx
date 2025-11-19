@@ -152,6 +152,7 @@ const GridWorld: React.FC<GridWorldProps> = ({
   };
 
   const agentPos = agentPath[agentPath.length - 1];
+  const boardMaxSize = 'min(70vh, calc(100vw - 2.5rem))';
 
   return (
     <div className="flex flex-col gap-4">
@@ -206,10 +207,15 @@ const GridWorld: React.FC<GridWorldProps> = ({
       </div>
 
       <div
-        className={`aspect-square w-full max-w-[70vh] mx-auto bg-[#0f1013] grid rounded-3xl border border-white/5 p-2 ${
+        className={`aspect-square w-full min-w-0 mx-auto bg-[#0f1013] grid rounded-3xl border border-white/5 p-2 ${
           isEditable ? 'cursor-pointer' : 'cursor-default'
         }`}
-        style={{ gridTemplateColumns: `repeat(${GRID_SIZE}, 1fr)` }}
+        style={{
+          gridTemplateColumns: `repeat(${GRID_SIZE}, minmax(0, 1fr))`,
+          width: '100%',
+          maxWidth: boardMaxSize,
+          maxHeight: boardMaxSize,
+        }}
         onMouseDown={() => isEditable && setIsMouseDown(true)}
         onMouseUp={() => setIsMouseDown(false)}
         onMouseLeave={() => setIsMouseDown(false)}
@@ -256,7 +262,7 @@ const GridWorld: React.FC<GridWorldProps> = ({
 
             const heat = activeHeatmap ? activeHeatmap.heatmap[r][c] : null;
             return (
-              <div key={`${r}-${c}-run`} data-testid={`tile-${r}-${c}`} className="relative aspect-square">
+              <div key={`${r}-${c}-run`} data-testid={`tile-${r}-${c}`} className="relative aspect-square min-w-0">
                 <HeatmapTile
                   type={tileTypeToRender}
                   heat={heat}

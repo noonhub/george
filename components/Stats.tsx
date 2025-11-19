@@ -153,7 +153,7 @@ const Stats: React.FC<StatsProps> = ({ stats, maxEpisodes }) => {
         )}
       </div>
 
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 text-center">
         <div>
           <p className="text-xs uppercase tracking-wide text-gray-500">Success Rate</p>
           <p className="text-lg font-semibold text-[#42dca3]">
@@ -186,7 +186,7 @@ const Stats: React.FC<StatsProps> = ({ stats, maxEpisodes }) => {
         </div>
       </div>
 
-      <div className="h-72 w-full">
+      <div className="w-full h-64 sm:h-72 lg:h-80">
         <ResponsiveContainer width="100%" height="100%">
           <ComposedChart data={chartData} margin={{ top: 10, right: 30, left: -10, bottom: 0 }}>
             <defs>
@@ -278,7 +278,7 @@ const Stats: React.FC<StatsProps> = ({ stats, maxEpisodes }) => {
       {cohortData.length > 0 && (
         <div>
           <p className="text-xs uppercase tracking-wide text-gray-500">Cohort Success Snapshot</p>
-          <div className="h-48 w-full mt-2">
+          <div className="w-full mt-2 h-48 sm:h-56 lg:h-64">
             <ResponsiveContainer width="100%" height="100%">
               <ComposedChart
                 data={cohortData}
