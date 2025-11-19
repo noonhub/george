@@ -1,0 +1,17 @@
+{
+  "watch": [
+    "App.tsx",
+    "components",
+    "hooks",
+    "constants.ts",
+    "rl",
+    "types.ts",
+    "vite.config.ts",
+    "tsconfig.json",
+    "index.tsx",
+    "index.html"
+  ],
+  "ext": "ts,tsx,js,jsx,json,css",
+  "ignore": ["dist", "node_modules"],
+  "exec": "npm run dev"
+}

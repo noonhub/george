@@ -1,0 +1,5 @@
+
+{
+  "name": "Q-Learning Grid World Visualizer",
+  "description": "An interactive web application to visualize the Q-learning reinforcement learning algorithm in a customizable grid world. Design your own maze, tune the AI parameters, and watch it learn the optimal path."
+}
