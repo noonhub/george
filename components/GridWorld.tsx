@@ -42,7 +42,7 @@ const tileTypesToEdit: { name: string; type: TileEnum; distractionType?: Distrac
 const HEATMAP_COLORS: Record<HeatmapCell['band'], string> = {
   low: 'rgba(255, 237, 213, 0.5)',
   medium: 'rgba(251, 191, 36, 0.55)',
-  high: 'rgba(52, 211, 153, 0.6)',
+  high: 'rgba(36, 127, 235, 0.6)',
 };
 
 const ACTION_ARROWS: Record<Action, string> = {
@@ -169,7 +169,7 @@ const GridWorld: React.FC<GridWorldProps> = ({
                 setSelectedTile(option.type);
               }}
               className={`px-3 py-2 rounded-md transition-all text-sm flex items-center gap-2 ${
-                selectedTile === option.type ? 'ring-2 ring-cyan-400 bg-cyan-500 text-white' : 'bg-gray-700 hover:bg-gray-600'
+                selectedTile === option.type ? 'ring-2 ring-[#247feb] bg-[#247feb] text-white' : 'bg-gray-700 hover:bg-gray-600'
               }`}
             >
               <span className="text-lg">{option.emoji ?? TILE_EMOJIS[option.type]}</span>
@@ -181,7 +181,7 @@ const GridWorld: React.FC<GridWorldProps> = ({
 
       <div className="bg-[#0f1013] border border-white/5 rounded-2xl p-4 space-y-3">
         <div className="flex items-center justify-between gap-3 flex-wrap">
-          <h4 className="text-sm font-semibold text-[#42dca3] uppercase tracking-wide">Fun stop types</h4>
+          <h4 className="text-sm font-semibold text-[#247feb] uppercase tracking-wide">Fun stop types</h4>
           <p className="text-xs text-gray-400">
             Each distraction trades points for time and energy differently. George learns which ones help him finish.
           </p>
@@ -206,7 +206,7 @@ const GridWorld: React.FC<GridWorldProps> = ({
               <div className="grid grid-cols-3 gap-2 text-center text-[11px] text-gray-300">
                 <div className="bg-black/30 rounded-lg p-2 border border-white/10">
                   <p className="text-[10px] uppercase text-gray-500">Fun</p>
-                  <p className="font-semibold text-emerald-300">{config.funReward}</p>
+                  <p className="font-semibold text-[#247feb]">{config.funReward}</p>
                 </div>
                 <div className="bg-black/30 rounded-lg p-2 border border-white/10">
                   <p className="text-[10px] uppercase text-gray-500">Time cost</p>
@@ -235,7 +235,7 @@ const GridWorld: React.FC<GridWorldProps> = ({
             <select
               value={heatmapMode}
               onChange={e => setHeatmapMode(e.target.value as HeatmapMode)}
-              className="bg-[#1f2229] border border-white/10 rounded-md px-2 py-1 text-xs focus:outline-none focus:ring-1 focus:ring-cyan-400"
+              className="bg-[#1f2229] border border-white/10 rounded-md px-2 py-1 text-xs focus:outline-none focus:ring-1 focus:ring-[#247feb]"
             >
               <option value="policy">Q-learning (value + policy)</option>
               <option value="routes">Recent routes (tried)</option>

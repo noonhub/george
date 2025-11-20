@@ -13,7 +13,7 @@ const App: React.FC = () => {
       <Header />
       <main className="container mx-auto px-4 py-6 sm:px-6 lg:p-10 space-y-8">
         <section className="relative rounded-3xl bg-[#131417] border border-white/5 p-4 sm:p-6 shadow-2xl shadow-black/40 overflow-hidden">
-          <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(66,220,163,0.18),transparent_60%)] opacity-70 rounded-3xl" />
+          <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(36,127,235,0.18),transparent_60%)] opacity-70 rounded-3xl" />
           <div className="relative">
             <GridWorld 
               grid={grid} 

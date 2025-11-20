@@ -129,9 +129,9 @@ const Controls: React.FC<ControlsProps> = ({
   return (
     <div className="p-5 bg-[#17181b] border border-white/5 rounded-3xl shadow-xl shadow-black/30 flex flex-col gap-5">
       <div className="flex items-center justify-between">
-        <h3 className="text-xl font-semibold text-[#42dca3] tracking-wide uppercase">Controls</h3>
+        <h3 className="text-xl font-semibold text-[#247feb] tracking-wide uppercase">Controls</h3>
         <div className="flex gap-2 flex-wrap justify-end">
-          <span className="px-3 py-1 text-sm font-semibold rounded-full bg-white/5 text-[#42dca3]">
+          <span className="px-3 py-1 text-sm font-semibold rounded-full bg-white/5 text-[#247feb]">
             Time: {resources.timeRemaining.toFixed(0)}
           </span>
           <span className="px-3 py-1 text-sm font-semibold rounded-full bg-white/5 text-orange-300">
@@ -149,12 +149,12 @@ const Controls: React.FC<ControlsProps> = ({
         {successSummary}
       </p>
       <div className="w-full bg-gray-700 rounded-full h-2.5">
-        <div className="bg-[#42dca3] h-2.5 rounded-full transition-all" style={{ width: `${(currentEpisode / maxEpisodes) * 100}%` }}></div>
+        <div className="bg-[#247feb] h-2.5 rounded-full transition-all" style={{ width: `${(currentEpisode / maxEpisodes) * 100}%` }}></div>
       </div>
       <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
         <button
           onClick={isRunning ? onPause : onStart}
-          className="flex items-center justify-center gap-2 px-4 py-2 font-semibold text-[#0b0c0f] bg-[#42dca3] rounded-full hover:bg-[#3ac091] disabled:bg-gray-700 disabled:text-gray-400 transition-colors"
+          className="flex items-center justify-center gap-2 px-4 py-2 font-semibold text-[#0b0c0f] bg-[#247feb] rounded-full hover:bg-[#1f6cd8] disabled:bg-gray-700 disabled:text-gray-400 transition-colors"
         >
           {isRunning ? <PauseIcon className="w-5 h-5" /> : <PlayIcon className="w-5 h-5" />}
           <span>{isRunning ? 'Pause' : (trainingState === 'PAUSED' ? 'Resume' : 'Start')}</span>
@@ -178,7 +178,7 @@ const Controls: React.FC<ControlsProps> = ({
       <div className="space-y-4">
         <div className="space-y-3 bg-white/5 p-3 rounded-2xl border border-white/10">
           <div className="flex items-center justify-between">
-            <h4 className="font-semibold text-[#42dca3]">Simple mode</h4>
+            <h4 className="font-semibold text-[#247feb]">Simple mode</h4>
             <p className="text-xs text-gray-400">Good defaults for a quick demo.</p>
           </div>
           {simpleParams.map(meta => (
@@ -193,7 +193,7 @@ const Controls: React.FC<ControlsProps> = ({
 
         {showAdvanced && (
           <div className="space-y-3 bg-white/5 p-3 rounded-2xl border border-white/10">
-            <h4 className="font-semibold text-[#42dca3]">Advanced knobs</h4>
+            <h4 className="font-semibold text-[#247feb]">Advanced knobs</h4>
             <p className="text-xs text-gray-400">Tweak how George learns and spends time/energy.</p>
 
             <ParamGroup title="Learning">

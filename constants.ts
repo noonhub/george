@@ -32,7 +32,7 @@ export const GRID_SIZE = WORLD_DEFINITION.size;
 export const TILE_COLORS: { [key in TileType]: string } = {
   [TileType.EMPTY]: 'bg-[#141519]',
   [TileType.WALL]: 'bg-[#1f2229]',
-  [TileType.KID]: 'bg-[#42dca3]/30',
+  [TileType.KID]: 'bg-[#247feb]/30',
   [TileType.ICE_CREAM]: 'bg-[#fcd34d]/40',
   [TileType.TV]: 'bg-[#ff4d4f]/30',
   [TileType.FRIENDS]: 'bg-[#ff4d4f]/30',

@@ -135,7 +135,7 @@ const Stats: React.FC<StatsProps> = ({ stats, maxEpisodes }) => {
   const trendColor = !hasData
     ? 'text-gray-500'
     : trend.rewardDelta > 0 || trend.successDelta > 0
-      ? 'text-emerald-400'
+      ? 'text-[#247feb]'
       : trend.rewardDelta < 0 || trend.successDelta < 0
         ? 'text-rose-400'
         : 'text-amber-300';
@@ -143,7 +143,7 @@ const Stats: React.FC<StatsProps> = ({ stats, maxEpisodes }) => {
   return (
     <div className="p-5 bg-[#17181b] border border-white/5 rounded-3xl shadow-xl shadow-black/30 flex flex-col gap-4">
       <div className="flex flex-col gap-1">
-        <h3 className="text-xl font-semibold text-[#42dca3] tracking-wide uppercase">
+        <h3 className="text-xl font-semibold text-[#247feb] tracking-wide uppercase">
           Performance Summary
         </h3>
         {hasData && (
@@ -156,7 +156,7 @@ const Stats: React.FC<StatsProps> = ({ stats, maxEpisodes }) => {
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 text-center">
         <div>
           <p className="text-xs uppercase tracking-wide text-gray-500">Success Rate</p>
-          <p className="text-lg font-semibold text-[#42dca3]">
+          <p className="text-lg font-semibold text-[#247feb]">
             {hasData ? `${successRate.toFixed(1)}%` : '—'}
           </p>
         </div>
@@ -191,8 +191,8 @@ const Stats: React.FC<StatsProps> = ({ stats, maxEpisodes }) => {
           <ComposedChart data={chartData} margin={{ top: 10, right: 30, left: -10, bottom: 0 }}>
             <defs>
               <linearGradient id="rewardGradient" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="5%" stopColor="#42dca3" stopOpacity={0.35} />
-                <stop offset="95%" stopColor="#42dca3" stopOpacity={0} />
+                <stop offset="5%" stopColor="#247feb" stopOpacity={0.35} />
+                <stop offset="95%" stopColor="#247feb" stopOpacity={0} />
               </linearGradient>
             </defs>
             <CartesianGrid strokeDasharray="3 3" stroke="rgba(255,255,255,0.08)" />
@@ -236,7 +236,7 @@ const Stats: React.FC<StatsProps> = ({ stats, maxEpisodes }) => {
               yAxisId="reward"
               type="monotone"
               dataKey="movingAvgReward"
-              stroke="#42dca3"
+              stroke="#247feb"
               strokeWidth={2}
               fill="url(#rewardGradient)"
               fillOpacity={1}
@@ -247,7 +247,7 @@ const Stats: React.FC<StatsProps> = ({ stats, maxEpisodes }) => {
               yAxisId="reward"
               type="monotone"
               dataKey="reward"
-              stroke="#10b981"
+              stroke="#247feb"
               strokeOpacity={0.4}
               dot={false}
               strokeDasharray="3 6"
@@ -266,7 +266,7 @@ const Stats: React.FC<StatsProps> = ({ stats, maxEpisodes }) => {
               <Brush
                 dataKey="episode"
                 height={24}
-                stroke="#42dca3"
+                stroke="#247feb"
                 fill="rgba(17,24,39,0.6)"
                 travellerWidth={12}
               />
